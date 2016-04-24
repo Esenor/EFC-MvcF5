@@ -6,7 +6,7 @@ use app\Querycustom;
 /**
  * @author David Dieu <daviddieu80@gmail.com>
  */
-class UserQuery extends Querycustom
+class UsersQuery extends Querycustom
 {
 
     public function __construct()

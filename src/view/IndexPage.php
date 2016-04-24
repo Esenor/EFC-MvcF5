@@ -32,11 +32,11 @@
         foreach ($this->users as $result) {
             ?>
             <tr>
-                <td><?php echo $result->id ?></td>
-                <td><?php echo $result->login ?></td>
-                <td><?php echo $result->password ?></td>
+                <td><?php echo $result->id; ?></td>
+                <td><a href="/utilisateur/<?php echo $result->id; ?>"><?php echo $result->login ?></a></td>
+                <td><?php echo $result->password; ?></td>
             </tr>
-            <?php
+        <?php
         }
         ?>
         </tbody>

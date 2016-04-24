@@ -6,6 +6,7 @@ namespace app;
  */
 abstract class Querycustom
 {
+
     /**
      * @var string query
      */
@@ -26,5 +27,14 @@ abstract class Querycustom
         $result = $context->query($this->query);
 
         return $result->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    /**
+     * @param \PDO $context
+     *
+     */
+    public function executeWithNoResult(\PDO $context)
+    {
+        $context->query($this->query);
     }
 }
