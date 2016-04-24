@@ -6,15 +6,15 @@ use app\Querycustom;
 /**
  * @author David Dieu <daviddieu80@gmail.com>
  */
-class GetUserQuery extends Querycustom
+class ToggleUserQuery extends Querycustom
 {
 
     public function __construct($id)
     {
         if (!is_integer($id)) {
-            throw new Exception('ID is not an integer.');
+            throw new \Exception('ID is not an integer.');
         }
-        $query = "Select id, login, password, activated from user where id = $id";
+        $query = "Update user set activated = not activated where id = $id";
         parent::__construct($query);
     }
 }

@@ -6,6 +6,7 @@ use app\Bddconnector;
 use app\Renderer;
 use app\Router;
 use model\GetUserQuery;
+use model\ToggleUserQuery;
 use model\UsersQuery;
 
 
@@ -45,8 +46,23 @@ class IndexController extends Controller
         }
     }
 
-    public function User($params)
+    /**
+     * @param $params
+     *
+     * @throws \Exception
+     */
+    public function AjaxUserToggleAction($params)
     {
+        $id = 0;
+        if (array_key_exists('id', $params)) {
+            $id = intval($params['id']);
+        } else {
+            throw new \Exception('Param user_id not found');
+        }
 
+        $context      = Bddconnector::getInstance();
+        $enable_query = new ToggleUserQuery($id);
+        $enable_query->executeWithNoResult($context);
     }
+
 }

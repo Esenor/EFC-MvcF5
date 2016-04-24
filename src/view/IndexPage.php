@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/bower_components/jQuery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+    <script src="/js/index.js"></script>
     <title><?php echo $this->title; ?></title>
 </head>
 <body>
@@ -25,6 +28,7 @@
             <th>ID</th>
             <th>Login</th>
             <th>Password</th>
+            <th>activated</th>
         </tr>
         </thead>
         <tbody>
@@ -35,8 +39,21 @@
                 <td><?php echo $result->id; ?></td>
                 <td><a href="/utilisateur/<?php echo $result->id; ?>"><?php echo $result->login ?></a></td>
                 <td><?php echo $result->password; ?></td>
+                <td>
+                    <?php
+                    if ($result->activated):
+                        ?>
+                        <button class="button" onClick="toggleUser('<?php echo $result->id; ?>', this)">Actif</button>
+                        <?php
+                    else:
+                        ?>
+                        <button class="button" onClick="toggleUser('<?php echo $result->id; ?>', this)">Inactif</button>
+                        <?php
+                    endif;
+                    ?>
+                </td>
             </tr>
-        <?php
+            <?php
         }
         ?>
         </tbody>

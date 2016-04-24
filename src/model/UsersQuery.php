@@ -11,7 +11,7 @@ class UsersQuery extends Querycustom
 
     public function __construct()
     {
-        $query = "Select id, login, password from user";
+        $query = "Select id, login, password, activated from user";
         parent::__construct($query);
     }
 }
