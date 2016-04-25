@@ -13,7 +13,8 @@ $url = $_SERVER['REQUEST_URI'];
 $routes = array(
     '/'                       => array('Controller' => 'Index', 'Action' => 'Index'),
     '/utilisateur/:id'        => array('Controller' => 'Index', 'Action' => 'User'),
-    '/utilisateur/toggle/:id' => array('Controller' => 'Index', 'Action' => 'AjaxUserToggle')
+    '/utilisateur/toggle/:id' => array('Controller' => 'Index', 'Action' => 'AjaxUserToggle'),
+    '/skill/list'             => array('Controller' => 'Skill', 'Action' => 'List')
 );
 
 $router = new Router($routes);

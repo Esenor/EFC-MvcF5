@@ -2,7 +2,6 @@
 
 namespace app;
 
-use controller\IndexController;
 use controller\ErrorController;
 
 /**

@@ -14,6 +14,7 @@
 <body>
 <header class="container">
     <h1><?php echo $this->title; ?></h1>
+    <small><?php echo BASE_URL; ?></small>
 </header>
 
 <div class="container">
@@ -58,6 +59,18 @@
         ?>
         </tbody>
     </table>
+
+    <button class="btn btn-success" onclick="loadSkill('skill-list')">Get skill</button>
+
+
+    <div class="modal fade" role="dialog" id="skill-list" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <p class="modal-header">Skills</p>
+                <p class="modal-body"></p>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>
