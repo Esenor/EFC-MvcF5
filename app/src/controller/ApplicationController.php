@@ -40,14 +40,9 @@ class ApplicationController extends Controller
      *
      * @throws \Exception
      */
-    public function SayHelloAction($params)
+    public function SayHelloAction()
     {
-        $friend = '';
-        if (array_key_exists('friend', $params)) {
-            $friend = $params['friend'];
-        } else {
-            throw new \Exception('I have no friend :-(');
-        }
+        $friend = $this->getUrlParam('friend');
         $this->render(
             'application/say-hello',
             [

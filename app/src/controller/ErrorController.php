@@ -10,7 +10,9 @@ use core\Renderer;
  */
 class ErrorController extends Controller
 {
-
+    /**
+     *
+     */
     public function IndexAction()
     {
         $this->render(

@@ -20,7 +20,7 @@ class Router
     function __construct($routes)
     {
         $this->routes = $routes;
-        $this->error  = new ErrorController();
+        $this->error  = new ErrorController(array());
     }
 
     /**
@@ -57,9 +57,9 @@ class Router
                 // Route valid, get the controller and action
                 $route           = $this->routes[$route_key];
                 $controller_name = 'controller\\' . $route['Controller'] . 'Controller';
-                $controller      = new $controller_name();
+                $controller      = new $controller_name($url_params);
                 $action_name     = $route['Action'] . 'Action';
-                $controller->$action_name($url_params);
+                $controller->$action_name();
             }
             $key_counter++;
         }

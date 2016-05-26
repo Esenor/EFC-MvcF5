@@ -11,8 +11,8 @@ abstract class Approutes
     public static function getRoutes()
     {
         return array(
-            '/'                  => array('Controller' => 'Application', 'Action' => 'Index'),
-            '/sayhello/:friend' => array('Controller' => 'Application', 'Action' => 'SayHello'),
+            '/'          => array('Controller' => 'Application', 'Action' => 'Index'),
+            '/sayhello/:friend' => array('Controller' => 'Application', 'Action' => 'SayHello')
         );
     }
 }
