@@ -1,10 +1,10 @@
 <?php
-namespace app;
+namespace core;
 
 /**
  * @author David Dieu <daviddieu80@gmail.com>
  */
-class Bddconnector
+class BddConnector
 {
     /**
      * @var PDO context de la bdd

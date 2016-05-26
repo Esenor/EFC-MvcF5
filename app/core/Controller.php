@@ -1,5 +1,5 @@
 <?php
-namespace app;
+namespace core;
 
 
 /**
@@ -8,11 +8,23 @@ namespace app;
 abstract class Controller
 {
     /**
+     * Controller constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    protected function requireParams() {
+        return array();
+    }
+
+    /**
      * @param string $view
      * @param array  $params
      */
     protected function render($view, $params)
     {
+        $params   = array_merge($this->requireParams(), $params);
         new Renderer('' . $view, $params);
     }
 }

@@ -1,10 +1,10 @@
 <?php
-namespace app;
+namespace core;
 
 /**
  * @author David Dieu <daviddieu80@gmail.com>
  */
-abstract class Querycustom
+abstract class BddQuery
 {
 
     /**

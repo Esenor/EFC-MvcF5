@@ -1,18 +1,19 @@
 {
-    "name": "mvcF5",
-    "description": "",
-    "main": "",
-    "license": "MIT",
-    "homepage": "",
-    "dependencies": {
-        "jQuery": "latest",
-        "bootstrap": "latest"
-    },
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ]
+  "name": "EFC MvcF5",
+  "description": "A simple MVC web application",
+  "main": "index.php",
+  "license": "MIT",
+  "homepage": "https://github.com/Esenor/EFC-MvcF5",
+  "dependencies": {
+    "jQuery": "latest",
+    "bootstrap": "latest",
+    "less": "less.js#^2.7.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

@@ -18,6 +18,14 @@ class Autoloader
         // extract (and remove) the last entry in array
         $class_name = array_pop($parts);
 
+        if(count($parts) > 0) {
+            if($parts[0] != 'core') {
+                $src_directory = array('src');
+                array_splice($parts, 0, 0, $src_directory);
+
+            }
+        }
+
         // Build path with the good directory separator
         $path = implode(DIRECTORY_SEPARATOR, $parts);
 
