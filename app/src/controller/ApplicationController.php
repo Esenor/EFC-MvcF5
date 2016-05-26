@@ -2,6 +2,8 @@
 namespace controller;
 
 use core\Controller;
+use model\entity\Friend;
+use model\entity\FriendCollection;
 
 
 /**
@@ -15,9 +17,11 @@ class ApplicationController extends Controller
     protected function requireParams()
     {
         $require_params = [
-          'header_subtitle' => '',
-          'page_title' => 'Application title'
+            'header_subtitle' => '',
+            'page_title'      => 'Application title',
+            'header_title'    => 'Friend controller'
         ];
+
         return $require_params;
     }
 
@@ -42,13 +46,22 @@ class ApplicationController extends Controller
      */
     public function SayHelloAction()
     {
-        $friend = $this->getUrlParam('friend');
-        $this->render(
-            'application/say-hello',
-            [
-                'header_title'  => 'Hello my friend',
-                'friend' => $friend
-            ]
-        );
+        $friend = new Friend($this->getUrlParam('friend'));
+        $this->render('application/say-hello', ['friend' => $friend]);
+    }
+
+    public function FriendListAction() {
+        $toto = new Friend('Toto');
+        $tata = new Friend('tata');
+        $titi = new Friend('titi');
+        $tutu = new Friend('tutu');
+
+        $crew = new FriendCollection();
+        $crew->add($toto);
+        $crew->add($tata);
+        $crew->add($titi);
+        $crew->add($tutu);
+
+        $this->render('application/friend/list', ['friends' => $crew]);
     }
 }

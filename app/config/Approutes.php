@@ -12,7 +12,8 @@ abstract class Approutes
     {
         return array(
             '/'          => array('Controller' => 'Application', 'Action' => 'Index'),
-            '/sayhello/:friend' => array('Controller' => 'Application', 'Action' => 'SayHello')
+            '/sayhello/:friend' => array('Controller' => 'Application', 'Action' => 'SayHello'),
+            '/friend/list' => array('Controller' => 'Application', 'Action' => 'FriendList'),
         );
     }
 }
